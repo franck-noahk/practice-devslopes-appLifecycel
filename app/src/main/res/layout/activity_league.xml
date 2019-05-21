@@ -56,7 +56,7 @@
         tools:layout_editor_absoluteY="194dp">
 
         <ToggleButton
-            android:id="@+id/toggleButton2"
+            android:id="@+id/men-toggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ToggleButton"
@@ -66,7 +66,7 @@
             tools:layout_editor_absoluteY="365dp" />
 
         <ToggleButton
-            android:id="@+id/toggleButton3"
+            android:id="@+id/women-toggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -78,7 +78,7 @@
             tools:layout_editor_absoluteY="439dp" />
 
         <ToggleButton
-            android:id="@+id/toggleButton"
+            android:id="@+id/co-ed-toggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ToggleButton"
