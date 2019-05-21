@@ -5,4 +5,7 @@
     <string name="Homepage_Going_All_in">GO ALL IN</string>
     <string name="Homepage_get_started">GET STARTED</string>
     <string name="League_desired_league">Desired League:</string>
+    <string name="League_mens">Mens</string>
+    <string name="League_womens">Womens</string>
+    <string name="League_co_ed">Co-ed</string>
 </resources>

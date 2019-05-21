@@ -54,5 +54,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="194dp">
+
+        <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ToggleButton"
+            android:textOff="@string/League_mens"
+            android:textOn="@string/League_mens"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="365dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="ToggleButton"
+            android:textOff="@string/League_womens"
+            android:textOn="@string/League_womens"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="439dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ToggleButton"
+            android:textOff="@string/League_co_ed"
+            android:textOn="@string/League_co_ed"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="284dp" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
