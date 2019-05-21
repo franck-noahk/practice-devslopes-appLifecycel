@@ -9,4 +9,6 @@
     <string name="League_womens">Womens</string>
     <string name="League_co_ed">Co-Ed</string>
     <string name="League_next">NEXT</string>
+    <string name="background_image">Background image</string>
+    <string name="swoosh_logo">Swoosh Logo</string>
 </resources>
