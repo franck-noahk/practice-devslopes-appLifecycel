@@ -16,36 +16,37 @@ class LeagueActivity : BasicActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
 
-        women_toggle.setOnClickListener {
-            if (menButtonPressed || coedButtonPressed){
-                menButtonPressed = false
-                coedButtonPressed = false
+        women_toggle.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                men_toggle.setChecked(false)
+                co_ed_toggle.setChecked(false)
             }
             womonButtonPressed = true
         }
 
-        co_ed_toggle.setOnClickListener {
-            if (menButtonPressed || womonButtonPressed) {
-                menButtonPressed = false
-                womonButtonPressed = false
+        co_ed_toggle.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                men_toggle.setChecked(false)
+                women_toggle.setChecked(false)
+            }
+            coedButtonPressed = true
+        }
+
+        men_toggle.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                women_toggle.setChecked(false)
+                co_ed_toggle.setChecked(false)
+            }
+            menButtonPressed = true
+        }
+        fun LeagueNextClicked(view: View) {
+            if (menButtonPressed || womonButtonPressed || coedButtonPressed) {
+                val skillActivity = Intent(this, Skill_Level::class.java)
+                startActivity(skillActivity)
+            }else{
+                val newActivity = Intent(this,LeagueActivity::class.java)
+                startActivity(newActivity)
             }
         }
     }
-
-    fun LeagueNextClicked (view: View) {
-        if (menButtonPressed || womonButtonPressed || coedButtonPressed) {
-            val skillActivity = Intent(this, Skill_Level::class.java)
-            startActivity(skillActivity)
-        }
-    }
-
-    fun menToggleClicked(view: View){
-        if (womonButtonPressed || coedButtonPressed){
-            womonButtonPressed = false
-            coedButtonPressed = false
-        }
-        menButtonPressed = true
-    }
-
-
 }
