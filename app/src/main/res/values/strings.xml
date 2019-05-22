@@ -11,4 +11,7 @@
     <string name="League_next">NEXT</string>
     <string name="background_image">Background image</string>
     <string name="swoosh_logo">Swoosh Logo</string>
+    <string name="i_am_a">I am a:</string>
+    <string name="skill_activity_baller">Baller</string>
+    <string name="skill_activity_beginner">Beginner</string>
 </resources>
