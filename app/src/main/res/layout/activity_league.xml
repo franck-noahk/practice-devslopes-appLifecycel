@@ -68,6 +68,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/swoosh_toggle"
             android:fontFamily="@font/montserrat"
+            android:onClick="menToggleClicked"
             android:text="@string/League_mens"
             android:textColor="@color/colorAccent"
             android:textOff="@string/League_mens"
