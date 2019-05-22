@@ -58,8 +58,9 @@ class LeagueActivity : BasicActivity() {
             val skillActivity = Intent(this, Skill_Level::class.java)
             startActivity(skillActivity)
         }else{
-            val newActivity = Intent(this,LeagueActivity::class.java)
-            startActivity(newActivity)
+            val myToast = Toast.makeText(this,"Please make a selection.",Toast.LENGTH_SHORT).show()
+//            val newActivity = Intent(this,LeagueActivity::class.java)
+//            startActivity(newActivity)
         }
     }
 
