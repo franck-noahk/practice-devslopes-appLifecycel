@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 
-class BasicActivity : AppCompatActivity() {
+open class BasicActivity : AppCompatActivity() {
 
     val TAG = "LifeCycle"
 
