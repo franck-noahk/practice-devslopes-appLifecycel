@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <ToggleButton
-            android:id="@+id/toggleButton"
+            android:id="@+id/BallerToggle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -71,7 +71,7 @@
             android:textOn="@string/skill_activity_baller" />
 
         <ToggleButton
-            android:id="@+id/toggleButton2"
+            android:id="@+id/NoobToggle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -92,7 +92,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/swoosh_button"
-        android:text="Button"
+        android:onClick="goToNextActivity"
+        android:text="@string/League_next"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
