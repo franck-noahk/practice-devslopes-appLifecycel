@@ -1,5 +1,6 @@
 package com.noahfranck.swoosh
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ class LeagueActivity : BasicActivity() {
     }
 
     fun LeagueNextClicked (view: View) {
-
+        val skillActivity = Intent(this,Skill_Level::class.java)
+        startActivity(skillActivity)
     }
 }
