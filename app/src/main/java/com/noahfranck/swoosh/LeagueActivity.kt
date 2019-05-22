@@ -39,14 +39,15 @@ class LeagueActivity : BasicActivity() {
             }
             menButtonPressed = true
         }
-        fun LeagueNextClicked(view: View) {
-            if (menButtonPressed || womonButtonPressed || coedButtonPressed) {
-                val skillActivity = Intent(this, Skill_Level::class.java)
-                startActivity(skillActivity)
-            }else{
-                val newActivity = Intent(this,LeagueActivity::class.java)
-                startActivity(newActivity)
-            }
+    }
+    fun LeagueNextClicked(view: View) {
+        if (menButtonPressed || womonButtonPressed || coedButtonPressed) {
+            val skillActivity = Intent(this, Skill_Level::class.java)
+            startActivity(skillActivity)
+        }else{
+            val newActivity = Intent(this,LeagueActivity::class.java)
+            startActivity(newActivity)
         }
     }
+
 }
