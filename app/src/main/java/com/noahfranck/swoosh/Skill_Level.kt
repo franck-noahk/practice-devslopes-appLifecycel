@@ -14,6 +14,7 @@ class Skill_Level : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill_level)
         league = intent.getStringExtra(EXTRA_LEAGUE)
+        println(league)
         NoobToggle.setOnCheckedChangeListener { buttonView, isChecked -> buttonPressed("noob") }
         BallerToggle.setOnCheckedChangeListener { buttonView, isChecked -> buttonPressed("baller") }
     }
@@ -28,4 +29,11 @@ class Skill_Level : AppCompatActivity() {
         }
     }
 
+    fun goToNextActivity(view: View){
+        if(skillLevel != ""){
+
+        }else{
+            Toast.makeText(this,"Please enter your skill level",Toast.LENGTH_SHORT)
+        }
+    }
 }
