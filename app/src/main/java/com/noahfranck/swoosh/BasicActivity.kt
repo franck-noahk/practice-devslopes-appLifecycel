@@ -6,7 +6,7 @@ import android.util.Log
 
 open class BasicActivity : AppCompatActivity() {
 
-    val TAG = "LifeCycle"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG,"${javaClass.simpleName} On Create" )
