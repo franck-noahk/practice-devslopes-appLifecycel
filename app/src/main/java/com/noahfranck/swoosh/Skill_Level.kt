@@ -52,7 +52,7 @@ class Skill_Level : AppCompatActivity() {
         if(skillLevel != "" && league != ""){
             val finishActivity = Intent(this,SearchActivity::class.java)
             finishActivity.putExtra(EXTRA_LEAGUE,league)
-            finishActivity.putExtra(SKILL, skillLevel)
+            finishActivity.putExtra(EXTRA_SKILL, skillLevel)
             startActivity(finishActivity)
         }else{
             Toast.makeText(this,"Please enter your skill level",Toast.LENGTH_SHORT).show()
