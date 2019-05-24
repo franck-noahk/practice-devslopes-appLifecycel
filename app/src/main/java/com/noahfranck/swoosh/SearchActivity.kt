@@ -6,14 +6,26 @@ import kotlinx.android.synthetic.main.activity_search.*
 
 class SearchActivity : AppCompatActivity() {
 
-
+    lateinit var player: Player
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
-        var leage = intent.getStringExtra(EXTRA_LEAGUE)
-        var skill = intent.getStringExtra(EXTRA_SKILL)
+        player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
 
-        SearchLeaguesText.text = "Looking for a $leage $skill league near you..."
+        SearchLeaguesText.text = "Looking for a ${player.League} ${player.skill} league near you..."
     }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putParcelable(EXTRA_PLAYER,player)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if(savedInstanceState != null){
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)
+        }
+    }
+
 }

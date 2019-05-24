@@ -12,6 +12,7 @@ class LeagueActivity : BasicActivity() {
 
 
     var selectedButton = ""
+    var player = Player("","")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +22,9 @@ class LeagueActivity : BasicActivity() {
             if (isChecked) {
                 men_toggle.setChecked(false)
                 co_ed_toggle.setChecked(false)
-                selectedButton = "Women"
+                player.League = "Women"
             }else{
-                selectedButton = ""
+                player.League = ""
             }
 
 
@@ -33,9 +34,9 @@ class LeagueActivity : BasicActivity() {
             if (isChecked) {
                 men_toggle.setChecked(false)
                 women_toggle.setChecked(false)
-                selectedButton = "Co Ed"
+                player.League = "Co Ed"
             }else{
-                selectedButton = ""
+                player.League = ""
             }
 
 
@@ -45,23 +46,35 @@ class LeagueActivity : BasicActivity() {
             if (isChecked) {
                 women_toggle.setChecked(false)
                 co_ed_toggle.setChecked(false)
-                selectedButton = "Men"
+                player.League = "Men"
             }else{
-                selectedButton = ""
+                player.League = ""
             }
 
 
         }
     }
     fun LeagueNextClicked(view: View) {
-        if (selectedButton != "") {
+        if (player.League != "") {
             val skillActivity = Intent(this, Skill_Level::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE,selectedButton)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(skillActivity)
         }else{
             val myToast = Toast.makeText(this,"Please make a selection.",Toast.LENGTH_SHORT).show()
 //            val newActivity = Intent(this,LeagueActivity::class.java)
 //            startActivity(newActivity)
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putParcelable(EXTRA_PLAYER,player)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if(savedInstanceState != null){
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)
         }
     }
 
