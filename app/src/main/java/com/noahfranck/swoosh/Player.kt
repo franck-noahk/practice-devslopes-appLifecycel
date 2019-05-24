@@ -1,4 +1,30 @@
 package com.noahfranck.swoosh
 
-class Player constructor(var League:String, var skill:String) {
+import android.os.Parcel
+import android.os.Parcelable
+
+class Player constructor(var League:String, var skill:String) : Parcelable{
+    constructor(parcel: Parcel) : this(
+            parcel.readString(),
+            parcel.readString()) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(League)
+        parcel.writeString(skill)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Player> {
+        override fun createFromParcel(parcel: Parcel): Player {
+            return Player(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Player?> {
+            return arrayOfNulls(size)
+        }
+    }
 }
