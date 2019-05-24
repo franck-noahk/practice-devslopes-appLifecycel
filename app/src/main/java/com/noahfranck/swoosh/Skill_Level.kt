@@ -10,14 +10,12 @@ import kotlinx.android.synthetic.main.activity_skill_level.*
 
 class Skill_Level : AppCompatActivity() {
 
-    var league = ""
-    var skillLevel = ""
+    lateinit var player : Player
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill_level)
-        league = intent.getStringExtra(EXTRA_LEAGUE)
-        println(league)
+        player = intent.getParcelableExtra(EXTRA_PLAYER)
         NoobToggle.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
                 buttonPressed("noob")
@@ -38,21 +36,18 @@ class Skill_Level : AppCompatActivity() {
         if (button == "noob"){
 
             NoobToggle.setChecked(true)
-            skillLevel = "Beginner"
+            player.skill = "Beginner"
         }else if (button == "baller"){
 
             BallerToggle.setChecked(true)
-            skillLevel  = "Baller"
+            player.skill = "Baller"
         }
-        Log.d(TAG,skillLevel)
     }
 
     fun goToNextActivity(view: View){
-        Log.d(TAG,skillLevel)
-        if(skillLevel != "" && league != ""){
+        if(player.skill != "" && player.League != ""){
             val finishActivity = Intent(this,SearchActivity::class.java)
-            finishActivity.putExtra(EXTRA_LEAGUE,league)
-            finishActivity.putExtra(EXTRA_SKILL, skillLevel)
+            finishActivity.putExtra(EXTRA_PLAYER,player)
             startActivity(finishActivity)
         }else{
             Toast.makeText(this,"Please enter your skill level",Toast.LENGTH_SHORT).show()
