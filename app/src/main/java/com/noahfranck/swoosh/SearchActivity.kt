@@ -11,9 +11,8 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
-        var leage = intent.getStringExtra(EXTRA_LEAGUE)
-        var skill = intent.getStringExtra(EXTRA_SKILL)
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
 
-        SearchLeaguesText.text = "Looking for a $leage $skill league near you..."
+        SearchLeaguesText.text = "Looking for a ${player.League} ${player.skill} league near you..."
     }
 }
