@@ -71,4 +71,11 @@ class LeagueActivity : BasicActivity() {
         outState?.putParcelable(EXTRA_PLAYER,player)
     }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if(savedInstanceState != null){
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)
+        }
+    }
+
 }
